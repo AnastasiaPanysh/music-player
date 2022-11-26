@@ -1,4 +1,4 @@
-const play = document.querySelector('.play')
+const play = document.querySelector('.play-stop')
 
 const arr = [{
         // src:'C:\\Users\\Tigra\\Desktop\\music-player\\2.mp3'
@@ -21,7 +21,7 @@ play.addEventListener('click', () => {
     currentSong()
 })
 
-document.querySelector('.right').addEventListener('click', () => {
+document.querySelector('.forward').addEventListener('click', () => {
     if (indexCurrentSong === arr.length - 1) {
         indexCurrentSong = 0;
     } else {
@@ -31,7 +31,7 @@ document.querySelector('.right').addEventListener('click', () => {
 });
 
 
-document.querySelector('.left').addEventListener('click', () => {
+document.querySelector('.back').addEventListener('click', () => {
     if (indCurrentSong === 0) {
         indCurrentSong = arr.length - 1
     } else {

@@ -34,21 +34,113 @@ body {
         .title-flex {
             display: flex;
             justify-content: space-between;
+            margin-top: 20px;
+            margin-left: 10px;
 
-            .title {
-                font-family: 'Inter';
-                font-style: normal;
+            #title {
                 font-weight: 700;
                 font-size: 18px;
                 color: #000000;
 
             }
-            .img-spotify{
+
+            .img-spotify {
                 background-image: url(./img/spotifyBtn.svg);
                 background-repeat: no-repeat;
                 width: 21px;
                 height: 21px;
             }
         }
+
+        #singer {
+            font-weight: 400;
+            font-size: 14px;
+            color: #454545;
+            margin-top: 5px;
+            margin-left: 10px;
+
+        }
+
+        .line-time {
+            margin-top: 20px;
+            margin-left: 10px;
+            display: flex;
+
+            .line-flex {
+                width: 257px;
+                height: 3px;
+                background: #DADADA;
+                margin-top: 5px;
+            }
+
+            .line {
+                width: 2px;
+                height: 3px;
+                background: #B45353;
+            }
+
+            .time {
+                font-weight: 400;
+                font-size: 12px;
+                color: #454545;
+                margin-left: 15px;
+            }
+        }
+
+        .panel {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            margin-left: 10px;
+
+            .repeat-btn {
+                background-image: url(./img/repeatBtn.svg);
+                background-repeat: no-repeat;
+                width: 24px;
+                height: 24px;
+            }
+
+            .play {
+                display: flex;
+                justify-content: space-between;
+                margin-top: 5px;
+
+                .back {
+                    background-image: url(./img/back.svg);
+                    background-repeat: no-repeat;
+                    width: 18px;
+                    height: 10px;
+                    margin-top: 2px;
+                }
+
+                .play-stop {
+                    background-image: url(./img/Polygon\ 1.svg);
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    width: 12px;
+                    height: 14px;
+                    margin-left: 33px;
+                    margin-right: 33px;
+                }
+
+                .forward {
+                    background-image: url(./img/forward.svg);
+                    background-repeat: no-repeat;
+                    width: 18px;
+                    height: 10px;
+                    margin-top: 2px;
+                }
+
+
+            }
+
+            .like {
+                background-image: url(./img/Icon\ \(1\).svg);
+                background-repeat: no-repeat;
+                width: 24px;
+                height: 24px;
+            }
+        }
+
     }
 }

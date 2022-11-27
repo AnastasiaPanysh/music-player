@@ -34,10 +34,10 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  margin-top: 20px;
+  margin-left: 10px;
 }
-.player .wrapper .title-flex .title {
-  font-family: "Inter";
-  font-style: normal;
+.player .wrapper .title-flex #title {
   font-weight: 700;
   font-size: 18px;
   color: #000000;
@@ -47,4 +47,89 @@ body {
   background-repeat: no-repeat;
   width: 21px;
   height: 21px;
+}
+.player .wrapper #singer {
+  font-weight: 400;
+  font-size: 14px;
+  color: #454545;
+  margin-top: 5px;
+  margin-left: 10px;
+}
+.player .wrapper .line-time {
+  margin-top: 20px;
+  margin-left: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.player .wrapper .line-time .line-flex {
+  width: 257px;
+  height: 3px;
+  background: #DADADA;
+  margin-top: 5px;
+}
+.player .wrapper .line-time .line {
+  width: 2px;
+  height: 3px;
+  background: #B45353;
+}
+.player .wrapper .line-time .time {
+  font-weight: 400;
+  font-size: 12px;
+  color: #454545;
+  margin-left: 15px;
+}
+.player .wrapper .panel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 20px;
+  margin-left: 10px;
+}
+.player .wrapper .panel .repeat-btn {
+  background-image: url(./img/repeatBtn.svg);
+  background-repeat: no-repeat;
+  width: 24px;
+  height: 24px;
+}
+.player .wrapper .panel .play {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 5px;
+}
+.player .wrapper .panel .play .back {
+  background-image: url(./img/back.svg);
+  background-repeat: no-repeat;
+  width: 18px;
+  height: 10px;
+  margin-top: 2px;
+}
+.player .wrapper .panel .play .play-stop {
+  background-image: url(./img/Polygon\ 1.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 12px;
+  height: 14px;
+  margin-left: 33px;
+  margin-right: 33px;
+}
+.player .wrapper .panel .play .forward {
+  background-image: url(./img/forward.svg);
+  background-repeat: no-repeat;
+  width: 18px;
+  height: 10px;
+  margin-top: 2px;
+}
+.player .wrapper .panel .like {
+  background-image: url(./img/Icon\ \(1\).svg);
+  background-repeat: no-repeat;
+  width: 24px;
+  height: 24px;
 }

@@ -34,14 +34,13 @@ const play = document.querySelector('.play-stop'),
 let indexCurrentSong = 0,
     repeatFlag = false,
     likeFlag = false,
-    flag = false,
-    indexOfSong = 0;
+    flag = false;
 
 const audioTag = document.createElement('audio');
 
-image.src = arr[indexOfSong].image;
-title.innerHTML = arr[indexOfSong].title;
-singer.innerHTML = arr[indexOfSong].singer;
+image.src = arr[indexCurrentSong].image;
+title.innerHTML = arr[indexCurrentSong].title;
+singer.innerHTML = arr[indexCurrentSong].author;
 
 play.addEventListener('click', () => {
     currentSong()
@@ -82,9 +81,9 @@ function currentSong() {
 
 function changeSong() {
     audioTag.src = arr[indexCurrentSong].src
-    image.src = arr[indexOfSong].image;
-    title.innerHTML = arr[indexOfSong].title;
-    singer.innerHTML = arr[indexOfSong].singer;
+    image.src = arr[indexCurrentSong].image;
+    title.innerHTML = arr[indexCurrentSong].title;
+    singer.innerHTML = arr[indexCurrentSong].singer;
     audioTag.play()
     playFlag = true;
 }
@@ -92,5 +91,5 @@ function changeSong() {
 audioTag.addEventListener('timeupdate', (event) => {
  
 
-
+    
 });

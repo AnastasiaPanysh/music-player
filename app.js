@@ -1,22 +1,48 @@
-const play = document.querySelector('.play-stop')
+const play = document.querySelector('.play-stop'),
+    like = document.querySelector('.like'),
+    repeat = document.querySelector('.repeat-btn'),
+    title = document.getElementById('title'),
+    singer = document.getElementById('singer'),
+    image = document.querySelector('.img'),
+    line = document.querySelector('.line'),
+    time = document.querySelector('.time'),
 
-const arr = [{
-        // src:'C:\\Users\\Tigra\\Desktop\\music-player\\2.mp3'
-        src: './1.mp3'
-    },
-    {
-        // src:'C:\\Users\\Tigra\\Desktop\\music-player\\1.mp3'
-        src: './2.mp3'
-    },
-    {
-        // src:'C:\\Users\\Tigra\\Desktop\\music-player\\1.mp3'
-        src: './3.mp3'
-    }
-];
-let indCurrentSong = 0
+    arr = [{
+            title: 'Seasons Change',
+            singer: 'Quasimoto',
+            src: './audio/quasimoto.mp3',
+            image: './img/quasimoto.svg',
+            likeFlag: false
+        },
+        {
+            title: 'Mosquito Song',
+            singer: 'Queens Of The Stone Age',
+            src: './audio/mosquito.mp3',
+            image: './img/mosquito.svg',
+            likeFlag: false
+        },
+        {
+            title: 'Unstoppable',
+            singer: 'Sia',
+            src: './audio/sia.mp3',
+            image: './img/sia.svg',
+            likeFlag: false
+        }
+    ];
 
-const audioTag = document.createElement('audio')
-let flag = false;
+
+let indexCurrentSong = 0,
+    repeatFlag = false,
+    likeFlag = false,
+    flag = false,
+    indexOfSong = 0;
+
+const audioTag = document.createElement('audio');
+
+image.src = arr[indexOfSong].image;
+title.innerHTML = arr[indexOfSong].title;
+singer.innerHTML = arr[indexOfSong].author;
+
 play.addEventListener('click', () => {
     currentSong()
 })
@@ -32,28 +58,39 @@ document.querySelector('.forward').addEventListener('click', () => {
 
 
 document.querySelector('.back').addEventListener('click', () => {
-    if (indCurrentSong === 0) {
-        indCurrentSong = arr.length - 1
+    if (indexCurrentSong === 0) {
+        indexCurrentSong = arr.length - 1
     } else {
-        indCurrentSong--
+        indexCurrentSong--
     }
     changeSong()
 })
 
 function currentSong() {
-    audioTag.src = arr[indCurrentSong].src
+    audioTag.src = arr[indexCurrentSong].src
     if (flag === false) {
-        play.textContent = 'выкл'
+        play.style = 'background-image: url(./img/pause.svg)';
         audioTag.play()
         flag = true
     } else {
-        play.textContent = 'вкл'
+        play.style = 'background-image: url(./img/playBtn.svg)';
         audioTag.pause()
         flag = false
     }
 }
 
+
 function changeSong() {
-    audioTag.src = arr[indCurrentSong].src
+    audioTag.src = arr[indexCurrentSong].src
+    image.src = arr[indexOfSong].image;
+    title.innerHTML = arr[indexOfSong].title;
+    singer.innerHTML = arr[indexOfSong].author;
     audioTag.play()
+    playFlag = true;
 }
+
+audioTag.addEventListener('timeupdate', (event) => {
+ 
+
+    
+});

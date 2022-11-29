@@ -81,7 +81,7 @@ function currentSong() {
 
 function changeSong() {
     audioTag.src = arr[indexCurrentSong].src
-    image.src = arr[indexCurrentSong].image;
+    image.style = ` background-image: url(${arr[indexCurrentSong].image})`;
     title.innerHTML = arr[indexCurrentSong].title;
     singer.innerHTML = arr[indexCurrentSong].singer;
     audioTag.play()

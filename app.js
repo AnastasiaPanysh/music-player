@@ -41,7 +41,7 @@ const audioTag = document.createElement('audio');
 
 image.src = arr[indexOfSong].image;
 title.innerHTML = arr[indexOfSong].title;
-singer.innerHTML = arr[indexOfSong].author;
+singer.innerHTML = arr[indexOfSong].singer;
 
 play.addEventListener('click', () => {
     currentSong()
@@ -84,7 +84,7 @@ function changeSong() {
     audioTag.src = arr[indexCurrentSong].src
     image.src = arr[indexOfSong].image;
     title.innerHTML = arr[indexOfSong].title;
-    singer.innerHTML = arr[indexOfSong].author;
+    singer.innerHTML = arr[indexOfSong].singer;
     audioTag.play()
     playFlag = true;
 }
@@ -92,5 +92,5 @@ function changeSong() {
 audioTag.addEventListener('timeupdate', (event) => {
  
 
-    
+
 });

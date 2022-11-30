@@ -14,7 +14,6 @@ body {
 }
 
 .player {
-
     width: 540px;
     height: 169px;
     margin: auto;
@@ -28,6 +27,8 @@ body {
         background-repeat: no-repeat;
         width: 169px;
         height: 169px;
+        cursor: pointer;
+
     }
 
     .wrapper {
@@ -71,10 +72,12 @@ body {
                 height: 3px;
                 background: #DADADA;
                 margin-top: 5px;
+                cursor: pointer;
+
             }
 
             .line {
-                width: 2px;
+                width: 0;
                 height: 3px;
                 background: #B45353;
             }

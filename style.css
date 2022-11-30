@@ -26,6 +26,7 @@ body {
   background-repeat: no-repeat;
   width: 169px;
   height: 169px;
+  cursor: pointer;
 }
 .player .wrapper .title-flex {
   display: -webkit-box;
@@ -67,9 +68,10 @@ body {
   height: 3px;
   background: #DADADA;
   margin-top: 5px;
+  cursor: pointer;
 }
 .player .wrapper .line-time .line {
-  width: 2px;
+  width: 0;
   height: 3px;
   background: #B45353;
 }

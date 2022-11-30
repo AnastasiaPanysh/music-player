@@ -5,6 +5,7 @@ const play = document.querySelector('.play-stop'),
     singer = document.getElementById('singer'),
     image = document.querySelector('.img'),
     line = document.querySelector('.line'),
+    lineTime = document.querySelector('.line-time'),
     time = document.querySelector('.time'),
 
     arr = [{
@@ -40,11 +41,12 @@ const audioTag = document.createElement('audio');
 
 image.src = arr[indexCurrentSong].image;
 title.innerHTML = arr[indexCurrentSong].title;
-singer.innerHTML = arr[indexCurrentSong].author;
+singer.innerHTML = arr[indexCurrentSong].singer;
 
 play.addEventListener('click', () => {
     currentSong()
 })
+
 
 document.querySelector('.forward').addEventListener('click', () => {
     if (indexCurrentSong === arr.length - 1) {
@@ -64,6 +66,7 @@ document.querySelector('.back').addEventListener('click', () => {
     }
     changeSong()
 })
+
 
 function currentSong() {
     audioTag.src = arr[indexCurrentSong].src
@@ -88,8 +91,31 @@ function changeSong() {
     playFlag = true;
 }
 
-audioTag.addEventListener('timeupdate', (event) => {
- 
+function updateProgress(event) {
+    const {
+        duration,
+        currentTime
+    } = event.srcElement;
+    const progressPercent = (currentTime / duration) * 100;
+    line.style.width = `${progressPercent}%`
+}
+audioTag.addEventListener('timeupdate', updateProgress)
 
-    
+function setProgress(event) {
+    const width = this.clientWidth;
+    const click = event.offsetX;
+    const duration = audioTag.duration;
+
+    audioTag.currentTime = (click / width) * duration;
+}
+
+lineTime.addEventListener('click', setProgress);
+
+audioTag.addEventListener('ended', () => {
+    if (indexCurrentSong === arr.length - 1) {
+        indexCurrentSong = 0;
+    } else {
+        indexCurrentSong++;
+    }
+    changeSong();
 });
